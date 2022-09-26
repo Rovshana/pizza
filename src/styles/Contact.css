@@ -1,0 +1,31 @@
+.main{
+    background: #F3F4F6;
+    height: 600px;
+
+
+}
+
+
+
+.contactLabel{
+    display: block;
+    color: red;
+}
+.contactInput{
+    width: 40%;
+    height: 53px;
+    background: #FFFFFF;
+border-radius: 4px;
+margin-top: 20px;
+margin-bottom: 10px;
+
+}
+
+.contactBtn{
+    width: 40%;
+    margin-top: 15px;
+    height: 53px;
+    background-color: #121619;
+    color: #ffff;
+    font-size: 20px;
+}

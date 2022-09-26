@@ -1,0 +1,27 @@
+
+.about{
+    display: flex;
+    justify-content: space-between;
+    height: 600px;
+}
+.aboutTitle{
+    font-style: normal;
+font-weight: 400;
+font-size: 60px;
+color:  #121619;;
+}
+
+.line{
+    border-bottom: 1px solid #121619;
+    ;
+    width: 479px;
+height: 9px;
+display: block;
+}
+.leftSide{
+    width: 40%;
+    margin-top: 30px;
+}
+.rightSide{
+    margin-top: 30px;
+}
