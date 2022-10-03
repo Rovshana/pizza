@@ -1,25 +1,16 @@
 import React, { useEffect, useState } from "react";
 import logo from "../assets/logo1.png";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "../styles/Navbar.css";
-import {useTranslation} from 'react-i18next'
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import {BsGlobe} from 'react-icons/bs'
-import Switch from '@mui/material/Switch';
 
-export function Navbar({mode, setMode}) {
+export function Navbar() {
 
-  const lngs = {
-    az: { nativeName: "Az" },
-  en: { nativeName: "En" },
-  gr: { nativeName: "Gr" },
-  }
-  const { t, i18n } = useTranslation();
+  const navigate = useNavigate()
  
   
   return (
-    <div className="navbar">
+    < nav className="navbar">
       <div className="leftSide">
         <img
           src={logo}
@@ -28,55 +19,17 @@ export function Navbar({mode, setMode}) {
         />
         
       </div>
-      <div className="rightSide">
-        <Link to="/">Home</Link>
-        <Link to="/menu">Menu</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-        {/* <div className="btnDiv">
-          {
-            Object.keys(lngs).map((lng)=>(
-              <button type='submit' key={lng} onClick={()=> i18n.changeLanguage(lng)} disabled={i18n.resolvedLanguage === lng}>{lngs[lng].nativeName}</button>
-            ))
-          }
-        </div> */}
-        {/* <div>
-          {
-            Object.keys(lngs).map((lng)=>(
-              <DropdownButton
-              as={ButtonGroup}
-              key={lng}
-              id={`dropdown-variants-${lng}`}
-              onClick={()=> i18n.changeLanguage(lng)} disabled={i18n.resolvedLanguage === lng}
-              
-            >
-              
-              </DropdownButton> 
-            ))
-          }
-
-        </div> */}
+      <ul className="rightSide">
+       <li onClick={()=>navigate('/')}> Home</li>
+       <li onClick={()=>navigate('/menu')}> Menu</li>
+       <li onClick={()=>navigate('/about')}> About</li>
+       <li onClick={()=>navigate('/contact')}> Contact</li>
+       
         
-        <div>
-        <NavDropdown
-              id="nav-dropdown-dark-example"
-              title={<BsGlobe style={{color: "white", width: "40px", height: "30px"}}/>}
-              menuVariant="dark"
-            >
-              {Object.keys(lngs).map((lng)=>
-              <NavDropdown.Item 
-              key={lng}
-              id={`dropdown-variants-${lng}`}
-              onClick={()=> i18n.changeLanguage(lng)} 
-              disabled={i18n.resolvedLanguage === lng} 
-              >{lngs[lng].nativeName}</NavDropdown.Item>)}
-              
-            </NavDropdown>
-        </div>
+       
         
-        <Switch   onChange={(e)=>setMode(mode === 'light' ? 'dark' : 'light')}defaultChecked />
-        
-      </div>
-    </div>
+       
+      </ul>
+    </nav>
   );
 }

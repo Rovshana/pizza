@@ -2,13 +2,18 @@
 .about{
     display: flex;
     justify-content: space-between;
-    height: 600px;
+    height: 500px;
+    
 }
 .aboutTitle{
     font-style: normal;
 font-weight: 400;
 font-size: 60px;
 color:  #121619;;
+text-align: center;
+padding-top: 20px;
+
+
 }
 
 .line{
@@ -17,11 +22,12 @@ color:  #121619;;
     width: 479px;
 height: 9px;
 display: block;
+margin: 0 auto;
 }
-.leftSide{
-    width: 40%;
-    margin-top: 30px;
-}
-.rightSide{
-    margin-top: 30px;
+.content{
+    width: 80%;;
+    height: 500px;
+   margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
 }

@@ -4,35 +4,45 @@
     background-color: #121619;
     display: flex;
     flex-direction: row;
-    ;
+    justify-content: center;
+    align-items: center;
   }
   
   .navbar .leftSide {
-    flex: 50%;
+   
     height: 100%;
     display: flex;
     align-items: center;
-    padding-left: 150px;
     padding-bottom: 60px
   }
   
   .navbar .leftSide img {
     width: 70px;
+    padding-top: 20px;
+    padding-left: 40px;
+    object-fit: cover;
   }
   
   .navbar .rightSide {
-    flex: 50%;
+  
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 60px;
+    color: white;
+    align-items: center;
+
   }
   
-  .navbar a {
+  .navbar ul {
     color: white;
     text-decoration: none;
-    margin: 20px;
+  
+  }
+  .navbar li{
+    list-style: none;
+    margin-right: 23px;
+    padding-right: 10px;
   }
   
   .navbar .rightSide button {
@@ -41,88 +51,20 @@
     cursor: pointer;
   }
   
-  /* .navbar .rightSide svg {
-    font-size: 40px;
-  }
-  
-  .navbar #open {
-    padding-left: 0px;
-  }
-  .navbar #open img {
-    display: none;
-  }
-  
-  .navbar #close img {
-    display: inherit;
-  }
-  
-  .navbar #open .hiddenLinks {
-    display: inherit;
-    margin-left: 30px;
-  }
-  
-  .navbar #close .hiddenLinks {
-    display: none;
-  }
-  
-  .navbar #open a {
-    width: 70px;
-    margin: 5px;
-  }
-  @media only screen and (max-width: 900px) {
-    .navbar .rightSide a {
-      width: 70px;
-    }
-    .navbar .leftSide {
-      padding-left: 50px;
-    }
-  }
-  
-  @media only screen and (max-width: 600px) {
-    .navbar .rightSide a {
-      display: none;
-    }
-  
-    .navbar .rightSide {
-      justify-content: flex-end;
-      padding-right: 50px;
-    }
-  
-    .navbar .rightSide button {
-      display: inherit;
-    }
-  }
-  
-  @media only screen and (min-width: 600px) {
-    .navbar .rightSide button {
-      display: none;
-    }
-  
-    .hiddenLinks {
-      display: none;
-    }
-  }
-  .select{
-    width: 40px;
-    height: 30px;
-    border-radius: 15px; */
-
   
   .btnDiv{
     background-color: white;
     color: red;
   }
-.show{
-  border-radius: 100px;
-  width: 60px;
-
-  
-
-}
-
-.dropdown-toggle{
-  color: #fff;
 
 
+  @media screen and (min-width: 320px) and (max-width: 576px) {
+     .leftSide img{
+      display: none;
+    };
+    .navbar .rightSide{
+      color: white;
+      width: 100%;
 
-}
+    }
+  }

@@ -8,22 +8,40 @@ function Contact(props) {
           firstName: '',
           lastName: '',
           email: '',
+          message: ''
         },
 
         onSubmit: values => {
-          alert(JSON.stringify(values, null, 2));
+         
         },
+
+        validate: (values)=>{
+          let errors = {}
+          if(!values.firstName){
+            errors.firstName = "Please enter your name"
+          }
+          if(!values.lastName){
+            errors.lastName = "Please enter your last name"
+          }
+          if(!values.email){
+            errors.email = "Please enter your email"
+          }else if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i.test(values.email)){
+            errors.email = 'Invalid email format!'}
+
+          return errors
+        }
       });
+    
     
 
     return (
         < div className='container main'>
-        <h1>test</h1>
-        <form onSubmit={formik.handleSubmit} >
+        
+        <form onSubmit={formik.handleSubmit}  className="form">
           
           
       
-       <label htmlFor="firstName" className='contactLabel'>First Name</label>
+       
        <input
         className='contactInput'
          id="firstName"
@@ -31,8 +49,10 @@ function Contact(props) {
          type="text"
          onChange={formik.handleChange}
          value={formik.values.firstName}
+         placeholder="First-name"
        />
-       <label htmlFor="lastName" className='contactLabel'>Last Name</label>
+        {formik.errors.firstName && <span className="error">{formik.errors.firstName}       </span>}
+       
        <input
        className='contactInput'
          id="lastName"
@@ -40,11 +60,11 @@ function Contact(props) {
          type="text"
          onChange={formik.handleChange}
          value={formik.values.lastName}
+         placeholder="Last Name"
        />
       
-   
+      {formik.errors.lastName && <span className="error">{formik.errors.lastName}       </span>}
      
-       <label htmlFor="email" className='contactLabel'>Email Address</label>
        <input
         className='contactInput'
          id="email"
@@ -52,20 +72,23 @@ function Contact(props) {
          type="email"
          onChange={formik.handleChange}
          value={formik.values.email}
+         placeholder="Email"
        />
-       <label htmlFor="email" className='contactLabel'>Write your message</label>
+       {formik.errors.email && <span className="error">{formik.errors.email}       </span>}
        <input
         className='contactInput'
-         id="email"
-         name="email"
-         type="email"
+         id="message"
+         name="message"
+         type="text"
          onChange={formik.handleChange}
-         value={formik.values.email}
+         value={formik.values.message}
+         placeholder=" Write your message"
+
        />
+    
      
-       <div >
        <button type="submit" className="contactBtn">Submit</button>
-       </div>
+      
      </form>
 
             

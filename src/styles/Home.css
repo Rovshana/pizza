@@ -14,6 +14,7 @@
   .headerContainer {
     width: auto;
     margin-left: 50px;
+  
   }
   
   .headerContainer .title1 {
@@ -54,25 +55,32 @@
     transition: 0.3s ease-in;
   }
   
-  @media only screen and (max-width: 650px) {
+  @media only screen and (min-width: 320px) and (max-width: 576px) {
     .home {
       justify-content: center;
       align-items: center;
     }
-   
-    
+    .headerContainer .title1{
+      font-size: 40px;
+      color: white;
+      margin-bottom: 0px;
+    }
+    .headerContainer .title2{
+      font-size: 20px;
+      color: white;
+      margin-bottom: 15px;
+    }
     
     
     .headerContainer {
       margin-left: 0px;
       border-radius: 10px;
       padding: 10px;
-      width: 80%;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      background-color: #121619;
+
       color: white;
     }
   
